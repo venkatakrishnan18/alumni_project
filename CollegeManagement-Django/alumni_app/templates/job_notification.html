@@ -1,0 +1,43 @@
+{% extends 'alumni_dashboard.html' %}
+
+{% block content %}
+<style>
+    .card {
+        background-color: #a8dfec;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .card-title {
+        color: #fff;
+        background-color: #494848;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .card-text {
+        color: #333;
+    }
+</style>
+
+
+    <h1>Job notifications</h1>
+    <div class="row">
+        {% for job in jobs %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job.job_title }}</h5>
+                        <p class="card-text">Company: {{ job.company_name }}</p>
+                        <p class="card-text">Location: {{ job.location }}</p>
+                        <p class="card-text">Posted Date: {{ job.posted_date }}</p>
+                        <p class="card-text">{{ job.description }}</p>
+                        <a href="{{ job.apply_link }}" class="btn btn-primary">Apply</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No job notifications available</p>
+        {% endfor %}
+    </div>
+{% endblock %}

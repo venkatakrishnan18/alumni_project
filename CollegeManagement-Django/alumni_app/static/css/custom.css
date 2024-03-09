@@ -1,0 +1,12 @@
+/* Example: Change the sidebar background color */
+.sidebar {
+    background-color: blue;
+}
+
+/* Example: Change the primary button color */
+.btn-primary {
+    background-color: white;
+    border-color: white;
+}
+
+/* Add more rules as necessary to override other specific elements */

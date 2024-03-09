@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .contact-info, .contact-form {
+            width: 45%;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .google-maps {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info, .contact-form, .google-maps {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <div class="contact-details">
+        
+    <div class="google-maps">
+        <h3>Location on Google Maps</h3>
+        <!-- Embed a Google Maps iframe with your location -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15624.607059903881!2d79.74527753027455!3d11.754357073243044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5498f22ccc2157%3A0x962571751d010b9e!2sSt.%20Josephs%20College%20of%20Arts%20and%20Science!5e0!3m2!1sen!2sin!4v1698692582955!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+
+        <div class="contact-form">
+            <h3>Contact Form</h3>
+            <form method="post" action="{% url 'contact_us' %}">
+                {% csrf_token %}
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+{% endblock %}

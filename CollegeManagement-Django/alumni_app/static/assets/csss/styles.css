@@ -1,0 +1,101 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hero section styles */
+#hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    color: #3ee770;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition
+}
+
+/* Add this CSS code to your existing styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least the viewport height */
+    margin: 0;
+}
+
+header {
+    /* Your header styles here */
+}
+
+#hero {
+    /* Your hero section styles here */
+}
+
+/* Add this style to push the footer to the bottom */
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}

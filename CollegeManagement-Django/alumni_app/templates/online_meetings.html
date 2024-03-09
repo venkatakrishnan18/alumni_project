@@ -1,0 +1,40 @@
+{% extends 'alumni_dashboard.html' %}
+
+{% block content %}
+    <style>
+        .card {
+            background-color: #a8dfec;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .card-title {
+            color: #fff;
+            background-color: #494848;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .card-text {
+            color: #333;
+        }
+    </style>
+
+    <h1>Meetings</h1>
+    <div class="row">
+        {% for Meeting in Meetings %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ Meeting.title }}</h5>
+                        <p class="card-text">Date: {{ Meeting.date }}</p>
+                        <p class="card-text">Time: {{ Meeting.time }}</p>
+                        <a href="{{ Meeting.link }}" class="btn btn-primary">Join us</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No online meeting available</p>
+        {% endfor %}
+    </div>
+{% endblock %}

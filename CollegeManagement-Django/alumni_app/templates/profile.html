@@ -1,0 +1,36 @@
+{% extends 'alumni_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid" style="background-color: #f2f6f8; padding: 20px;">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+            <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+        </div>
+
+        <div class="row justify-content-center"> <!-- Center the container -->
+            <div class="col-lg-5" style="text-align: center; position: relative;">
+                <div style="position: absolute; top: -50px; left: 50%; transform: translateX(-50%);">
+                    <div class="bg-success rounded-circle border border-2 border-white p-1">
+                        <i class="fas fa-user" style="font-size: 40px; color: white;"></i> <!-- Font Awesome human icon -->
+                    </div>
+                </div>
+                <div class="card o-hidden border-0 shadow-lg my-5" style="background-color: white; border-radius: 10px; padding: 20px;">
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>
+                                <strong>Name:</strong> {{ instance.first_name }} {{ instance.last_name }}<br>
+                                <strong>Roll No:</strong> {{ instance.rollno }}<br>
+                                <strong>Graduation Year:</strong> {{ instance.graduation_year }}<br>
+                                <strong>Major:</strong> {{ instance.major }}<br>
+                                <strong>Current Employer:</strong> {{ instance.current_employer }}<br>
+                                <strong>Current Job Title:</strong> {{ instance.current_job_title }}<br>
+                                <strong>Contact:</strong> {{ instance.contact }}<br><br>
+                            </li>
+                        </ul>
+                        <a href="{% url 'update_profile' %}" class="btn btn-sm btn-primary shadow-sm">Update Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

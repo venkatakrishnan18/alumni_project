@@ -1,0 +1,21 @@
+{% extends 'admin_dashboard.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Job Notifications</h1>
+        <div class="job-list">
+            {% for notification in job_notification %}
+                <div class="job-item">
+                    <h3>{{ notification.job_title }}</h3>
+                    <p><strong>Company:</strong> {{ notification.company_name }}</p>
+                    <p><strong>Location:</strong> {{ notification.location }}</p>
+                    <p><strong>Posted on:</strong> {{ notification.posted_date }}</p>
+                    <p>{{ notification.description }}</p>
+                    <a href="{{ notification.apply_link }}" class="btn btn-primary">Apply Now</a>
+                </div>
+            {% empty %}
+                <p>No job notifications available.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
